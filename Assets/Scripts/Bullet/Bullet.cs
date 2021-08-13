@@ -7,8 +7,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float deactivateTimer;
 
-
-    // Update is called once per frame
+    private void Start()
+    {
+        Invoke("DeactivateBullet", deactivateTimer);
+    }
     void Update()
     {
         Move();
@@ -21,5 +23,9 @@ public class Bullet : MonoBehaviour
         transform.position = temp;
     }
 
+    void DeactivateBullet()
+    {
+        gameObject.SetActive(false);
+    }
 
 }
