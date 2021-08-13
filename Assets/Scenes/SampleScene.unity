@@ -204,27 +204,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &696693569 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7127399057970417467, guid: e18b08b51ab406e42855aa0f6dc85a17,
-    type: 3}
-  m_PrefabInstance: {fileID: 7127399057307303034}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &696693570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696693569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12da129f7f668e4a9df84bb2d4e15b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  min_Y: -4.3
-  max_Y: 4.3
 --- !u!1 &1206427147
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +319,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 696693570, guid: e18b08b51ab406e42855aa0f6dc85a17, type: 3}
+      propertyPath: attackTimer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 696693570, guid: e18b08b51ab406e42855aa0f6dc85a17, type: 3}
+      propertyPath: playerBullet
+      value: 
+      objectReference: {fileID: 7821184001920088023, guid: 8c448e37ea4ca754eadcca75a3d9e14c,
+        type: 3}
+    - target: {fileID: 780250132, guid: e18b08b51ab406e42855aa0f6dc85a17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127399057970417464, guid: e18b08b51ab406e42855aa0f6dc85a17,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7127399057970417465, guid: e18b08b51ab406e42855aa0f6dc85a17,
         type: 3}
       propertyPath: m_RootOrder
@@ -399,6 +396,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spaceship
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127399057970417470, guid: e18b08b51ab406e42855aa0f6dc85a17,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.910144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127399057970417470, guid: e18b08b51ab406e42855aa0f6dc85a17,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.47015232
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e18b08b51ab406e42855aa0f6dc85a17, type: 3}
