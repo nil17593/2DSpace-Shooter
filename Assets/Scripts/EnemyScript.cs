@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float boundX;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
+
     public bool canShoot;
     public bool canRotate;
     private bool canMove = true;
@@ -34,6 +35,11 @@ public class EnemyScript : MonoBehaviour
             {
                 rotateSpeed = Random.Range(rotateSpeed, rotateSpeed + 20f);
             }
+        }
+
+        if (canShoot)
+        {
+            Invoke("StartShooting", Random.Range(1f, 3f));
         }
     }
 
@@ -65,5 +71,38 @@ public class EnemyScript : MonoBehaviour
             transform.Rotate(new Vector3(0f, 0f, rotateSpeed * Time.deltaTime), Space.World);
         }
 
+    }
+
+    void StartShooting()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        bullet.GetComponent<Bullet>().is_EnemyBullet=true;
+
+        if (canShoot)
+        {
+            Invoke("StartShooting", Random.Range(1f, 3f));
+        }
+    }
+
+    void TurnOffGameObject()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag=="Bullet")
+        {
+            canMove = false;
+
+            if (canShoot)
+            {
+                canShoot = false;
+                CancelInvoke("StartShooting");
+            }
+            Invoke("TurnOffGameObject",1f);
+
+            anim.Play("Destroy");
+        }
     }
 }
